@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registered Students</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <style>
+        /* Navbar Styling */
+        
+        .navbar {
+            background: linear-gradient(to right, #007bff, #00bbff);
+            padding: 15px;
+        }
+        
+        .navbar-brand {
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        /* Header Styling */
+        
+        .page-header {
+            background: #f8f9fa;
+            padding: 25px;
+            text-align: center;
+            border-radius: 8px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+        /* Filters Section */
+        
+        .filters-container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        /* Table Styling */
+        
+        .table-container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .table th {
+            text-align: center;
+            background: #007bff !important;
+            color: white;
+        }
+        
+        .table td {
+            text-align: center;
+            vertical-align: middle;
+        }
+        /* Notification Section */
+        
+        .notification-section {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+        /* Footer */
+        
+        footer {
+            background: #00bbff;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 30px;
+        }
+        /* Responsive Design */
+        
+        @media (max-width: 768px) {
+            .filters-container,
+            .table-container,
+            .notification-section {
+                padding: 10px;
+            }
+            .table th,
+            .table td {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header with Sticky Navigation -->
+    <header class="sticky-top navbar navbar-expand-lg navbar-dark shadow-sm">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center py-3 w-100">
+                <div class="logo h4 d-flex align-items-center text-white">
+                    <img src="./images/mortarboard.png" alt="Logo" class="me-2" style="width: 40px; height: 40px;"> College Placement Portal
+                </div>
+                <nav>
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a class="nav-link text-white" href="tpo.html">Dashboard</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="placed_students.html">Analyze Placement</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="job_offer.html">Job Offers</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="registered_students_tpo.html">Registered Students</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="index.html">Logout</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="container">
+            <h1 class="fw-bold text-primary">Registered Students</h1>
+        </div>
+    </header>
+
+    <!-- Filters Section -->
+    <section class="container">
+        <div class="filters-container">
+            <div class="row">
+                <div class="col-md-4">
+                    <label for="course" class="fw-bold">Course</label>
+                    <select id="course" class="form-select">
+                        <option value="">Select Course</option>
+                        <option value="Computer Science">Computer Science</option>
+                        <option value="Electrical Engineering">Electrical Engineering</option>
+                        <option value="Mechanical Engineering">Mechanical Engineering</option>
+                        <option value="IT">IT</option>
+                    </select>
+                </div>
+
+                <div class="col-md-4">
+                    <label for="year" class="fw-bold">Year</label>
+                    <select id="year" class="form-select">
+                        <option value="">Select Year</option>
+                        <option value="FY">1st Year</option>
+                        <option value="SY">2nd Year</option>
+                        <option value="TY">3rd Year</option>
+                        <option value="Btech">4th Year</option>
+                    </select>
+                </div>
+
+                <div class="col-md-4">
+                    <label for="percentage" class="fw-bold">Minimum Percentage</label>
+                    <input type="number" id="percentage" class="form-control" min="0" max="100" step="0.01" placeholder="Enter percentage">
+                </div>
+            </div>
+
+            <div class="d-flex justify-content-center mt-3">
+                <button id="applyFilterBtn" class="btn btn-primary">Apply Filters</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Table Section -->
+    <section class="container">
+        <div class="table-container">
+            <table class="table table-striped table-bordered">
+                <!-- Inside the table header -->
+                <thead>
+                    <tr>
+                        <th>Enrollment No</th>
+                        <th>Name</th>
+                        <th>Age</th>
+                        <th>Address</th>
+                        <th>Course</th>
+                        <th>Year</th>
+                        <th>Percentage</th>
+                        <th>Job(s) Applied</th>
+                        <!-- NEW COLUMN -->
+                        <th>Profile</th>
+                        <th>Shortlist</th>
+                    </tr>
+                </thead>
+
+                <tbody id="studentTableBody">
+                    <!-- Data will be populated here -->
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Notification Section -->
+    <section class="container">
+        <div class="notification-section">
+            <h5 class="fw-bold text-primary">Send Notifications</h5>
+            <div class="form-group my-3">
+                <label for="notificationMessage" class="fw-bold">Notification Message</label>
+                <textarea id="notificationMessage" class="form-control" rows="4" placeholder="Enter notification message"></textarea>
+            </div>
+            <button id="sendNotificationBtn" class="btn btn-success">Send Notifications to Shortlisted Students</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p class="mb-0">&copy; 2024 College Placement Portal. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!--<script src="js/registered_students.js"></script>-->
+    <script src="js/shortlist_student.js"></script>
+
+</body>
+
+</html>

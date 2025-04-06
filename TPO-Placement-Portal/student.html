@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/style2.css">
+    <link rel="stylesheet" href="css/footer.css">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Animation CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/animate.css/animate.min.css" rel="stylesheet">
+
+    <style>
+        /* Navbar Styling */
+        
+        .navbar {
+            background: linear-gradient(to right, #0099ff, #00bbff);
+            padding: 15px 0;
+        }
+        
+        .navbar-nav .nav-link {
+            font-weight: 500;
+            transition: 0.3s;
+        }
+        
+        .navbar-nav .nav-link:hover {
+            color: #fff !important;
+            transform: scale(1.1);
+        }
+        /* Student Dashboard Title */
+        
+        .dashboard-title {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #004080;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+        
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        /* Dashboard Grid Layout (Ensures 4 Boxes in One Line) */
+        
+        .dashboard-grid {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            padding: 30px;
+            max-width: 1200px;
+            margin: auto;
+        }
+        /* Dashboard Cards */
+        
+        .dashboard-card {
+            background: #f8f9fa;
+            /* Light Gray */
+            padding: 40px;
+            width: 23%;
+            /* Ensures Four Boxes in One Row */
+            height: 200px;
+            border-radius: 15px;
+            box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: 0.3s ease-in-out;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            animation: fadeUp 0.8s ease-in-out;
+        }
+        
+        .dashboard-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .dashboard-card h2 {
+            font-size: 1.6rem;
+            font-weight: bold;
+            color: #004080;
+            margin-bottom: 15px;
+        }
+        /* Button Styling */
+        
+        .btn-primary {
+            background-color: #00bbff;
+            color: white;
+            font-weight: bold;
+            border: none;
+            padding: 10px 15px;
+            transition: 0.3s;
+            width: 100%;
+            border-radius: 10px;
+        }
+        
+        .btn-primary:hover {
+            background-color: #007acc;
+            color: white;
+        }
+        
+        @keyframes fadeUp {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        /* Sticky Footer */
+        
+        footer {
+            background: linear-gradient(to right, #0099ff, #00bbff);
+            font-size: 14px;
+            font-weight: 500;
+            text-align: center;
+            color: white;
+            padding: 15px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+        /* Responsive (Ensures Four Boxes in One Line on Larger Screens, Stacked on Mobile) */
+        
+        @media (max-width: 992px) {
+            .dashboard-grid {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .dashboard-card {
+                width: 45%;
+                margin-bottom: 20px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .dashboard-card {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header with Sticky Navigation -->
+    <header class="sticky-top navbar navbar-expand-lg navbar-dark shadow-sm">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center py-3 w-100">
+                <div class="logo h4 d-flex align-items-center text-white">
+                    <img src="./images/mortarboard.png" alt="Logo" class="me-2" style="width: 40px; height: 40px;"> College Placement Portal
+                </div>
+                <nav>
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="student.html">Student</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="college_info.html">College Info</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="contact.html">Contact us</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <div class="container mt-5">
+        <h1 class="dashboard-title">Student Dashboard</h1>
+    </div>
+
+    <!-- Dashboard Section with Four Boxes in One Line -->
+    <section class="container">
+        <div class="dashboard-grid">
+            <div class="dashboard-card">
+                <h2>Profile</h2>
+                <a href="view_profile.html" class="btn btn-primary">Click Here</a>
+            </div>
+
+            <div class="dashboard-card">
+                <h2>Upload Resume</h2>
+                <a href="upload_resume.html" class="btn btn-primary">Upload Now</a>
+            </div>
+
+            <div class="dashboard-card">
+                <h2>Job Opportunities</h2>
+                <a href="student_jobs.html" class="btn btn-primary">View Jobs</a>
+            </div>
+
+            <div class="dashboard-card">
+                <h2>Notifications</h2>
+                <a href="notifications.html" class="btn btn-primary">Check Notifications</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 College Placement Portal. All rights reserved.</p>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

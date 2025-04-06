@@ -1,0 +1,122 @@
+/* General Styles */
+
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+* {
+  font-family: "Rubik", sans-serif;
+  width: 100%;
+}
+/* Header Styles */
+header {
+    background-color: #007bff; /* Primary color for the navbar */
+    color: #fff;
+    padding: 10px 0;
+}
+
+header .logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+header .logo img {
+    width: 40px;
+    height: 40px;
+}
+
+/* Navbar Styles */
+.navbar {
+    background-color: #007bff; /* Make the navbar background consistent */
+}
+
+.navbar-nav {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-nav .nav-item {
+    margin: 0 10px;
+}
+
+.navbar-nav .nav-link {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 10px 15px;
+    transition: color 0.3s;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #FFD700; /* Change color on hover */
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    header .navbar-nav {
+        flex-direction: column;
+        width: 100%;
+        padding-top: 10px;
+    }
+
+    header .navbar-nav .nav-item {
+        margin-bottom: 10px;
+    }
+
+    .logo {
+        margin-bottom: 10px;
+    }
+
+    .logo img {
+        margin-right: 0;
+        margin-bottom: 5px;
+    }
+}
+
+/* For Mobile Menu Toggle */
+@media (max-width: 576px) {
+    header .navbar-nav {
+        display: none;
+        width: 100%;
+    }
+
+    header .navbar-nav.show {
+        display: flex;
+    }
+
+    .navbar-toggler {
+        display: block;
+        background-color: #007bff;
+        border: none;
+        color: white;
+    }
+
+    .navbar-toggler-icon {
+        background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"%3E%3Cpath stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"%3E%3C/path%3E%3C/svg%3E');
+    }
+}
+
+/* Mobile Nav Link Styling */
+.navbar-nav .nav-item a {
+    padding: 10px;
+    font-size: 18px;
+}
+
+.navbar-nav .nav-item a:hover {
+    color: #FFD700;
+}
+
+/* Adjust Logo and Navbar for Larger Screens */
+@media (min-width: 1200px) {
+    .logo {
+        font-size: 28px;
+    }
+
+    .navbar-nav .nav-item {
+        margin: 0 15px;
+    }
+}

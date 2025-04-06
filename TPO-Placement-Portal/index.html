@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Placement Portal</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/style2.css">
+
+    <link rel="stylesheet" href="css/footer.css">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Animation -->
+    <link href="https://cdn.jsdelivr.net/npm/animate.css/animate.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Header with Sticky Navigation -->
+    <header class="sticky-top navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center py-3 w-100">
+                <div class="logo h4 d-flex align-items-center text-white">
+                    <img src="./images/mortarboard.png" alt="Logo" class="me-2" style="width: 40px; height: 40px;"> College Placement Portal
+                </div>
+                <nav>
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="college_info.html">College Info</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="signup.html">SignUp</a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <style>
+                    .navbar-nav {
+                        display: flex;
+                        justify-content: flex-end;
+                        /* Aligns items to the right */
+                        gap: 12px;
+                        /* Adds equal spacing between items */
+                        list-style: none;
+                        padding: 0;
+                        margin: 0;
+                    }
+                    
+                    .nav-item {
+                        display: inline-block;
+                    }
+                </style>
+
+
+            </div>
+        </div>
+    </header>
+
+
+    <!-- Hero Section -->
+    <div class="section">
+        <div class="video-visual">
+            <video class="video" autoplay loop muted poster="" role="none" aria-label="background gradient animation">
+                <source
+                    src="https://raw.githubusercontent.com/mobalti/open-props-interfaces/main/dynamic-content-lockups-v2/assets/bg-gradient-animation.mp4"
+                    type="video/mp4" />
+            </video>
+        </div>
+        <div class="section-wrapper">
+            <div class="content-wrapper">
+                <div class="content content-1">
+                    <div class="mobile-visual">
+                        <img class="card-img" src="./images/interview.png" alt="Interview preparation - Candidate ready for interview" />
+                    </div>
+                    <div class="meta">
+                        <h2 class="headline">
+                            Ace Your <span class="text-highlight">Interviews</span>
+                        </h2>
+                        <p class="desc">
+                            Prepare effectively for your next interview with expert tips and strategies tailored to your dream role.
+                        </p>
+                    </div>
+                </div>
+                <div class="content content-2">
+                    <div class="mobile-visual">
+                        <img class="card-img" src="./images/resume.png" alt="Resume building - Showcase your skills" />
+                    </div>
+                    <div class="meta">
+                        <h2 class="headline">
+                            Build a <span class="text-highlight">Winning Resume</span>
+                        </h2>
+                        <p class="desc">
+                            Learn how to craft a resume that highlights your strengths and achievements to make a lasting impression.
+                        </p>
+                    </div>
+                </div>
+                <div class="content content-3">
+                    <div class="mobile-visual">
+                        <img class="card-img" src="./images/placement.png" alt="Placement process - Achieve success" />
+                    </div>
+                    <div class="meta">
+                        <h2 class="headline">
+                            Navigate Your <span class="text-highlight">Placement Process</span>
+                        </h2>
+                        <p class="desc">
+                            Master the art of placement preparation with insights into aptitude tests, group discussions, and HR interviews.
+                        </p>
+                    </div>
+                </div>
+                <div class="content content-4">
+                    <div class="mobile-visual">
+                        <img class="card-img" src="./images/job.png" alt="Job success - Achieving your career goals" />
+                    </div>
+                    <div class="meta">
+                        <h2 class="headline">
+                            Secure Your <span class="text-highlight">Dream Job</span>
+                        </h2>
+                        <p class="desc">
+                            Turn your aspirations into reality by landing a role that aligns with your skills and passions.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="visual">
+                <div class="card-wrapper">
+                    <div class="card card-1">
+                        <img class="card-img" src="./images/interview.png" alt="Interview preparation - Candidate ready for interview" />
+                    </div>
+                    <div class="card card-2">
+                        <img class="card-img" src="./images/resume.png" alt="Resume building - Showcase your skills" />
+                    </div>
+                    <div class="card card-3">
+                        <img class="card-img" src="./images/placement.png" alt="Placement process - Achieve success" />
+                    </div>
+                    <div class="card card-4">
+                        <img class="card-img" src="./images/job.png" alt="Job success - Achieving your career goals" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Main Section with Cards -->
+    <!-- Main Section with Cards -->
+    <section class="main-section py-5 text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="info-card p-4 bg-light shadow-sm mb-4">
+                        <h2>Registered Students</h2>
+                        <p id="registered-students" class="animated-number">0</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="info-card p-4 bg-light shadow-sm mb-4">
+                        <h2>Placed Students</h2>
+                        <p id="placed-students" class="animated-number">0</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="info-card p-4 bg-light shadow-sm mb-4">
+                        <h2>Available Job Offers</h2>
+                        <p id="job-offers" class="animated-number">0</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function animateNumber(elementId, targetNumber, duration) {
+            let start = 0;
+            const stepTime = Math.abs(Math.floor(duration / targetNumber));
+            const element = document.getElementById(elementId);
+            const timer = setInterval(() => {
+                start++;
+                element.textContent = start + "+";
+                if (start >= targetNumber) {
+                    clearInterval(timer);
+                }
+            }, stepTime);
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            animateNumber("registered-students", 1200, 2000);
+            animateNumber("placed-students", 750, 2000);
+            animateNumber("job-offers", 35, 2000);
+        });
+    </script>
+
+
+    <!-- About Us Section -->
+    <section id="about-us" class="info-section text-center py-5 bg-light">
+        <div class="container">
+            <h2 class="animate__animated animate__fadeIn">About Us</h2>
+            <p class="animate__animated animate__fadeIn animate__delay-1s">The College Placement Portal is designed to streamline the placement process for students and employers alike.</p>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+    <style>
+        .p-b90 {
+            padding-bottom: 90px;
+        }
+        
+        .p-t120 {
+            padding-top: 120px;
+        }
+        
+        .m-b30 {
+            margin-bottom: 30px;
+        }
+        
+        .section-head.center.wt-small-separator-outer {
+            margin-bottom: 50px;
+            text-align: center;
+        }
+        
+        .section-head {
+            position: relative;
+        }
+        
+        .site-text-primary,
+        .wt-small-separator {
+            color: #ea130e;
+        }
+        
+        .wt-small-separator {
+            font-family: "Heebo", sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding-right: 40px;
+            font-size: 26px;
+            line-height: 26px;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+            font-weight: 700;
+        }
+        
+        .section-head.center .wt-small-separator div.sep-leaf-left {
+            position: relative;
+        }
+        
+        .section-head.center .wt-small-separator div.sep-leaf-left:before,
+        .section-head.center .wt-small-separator div.sep-leaf-left:after {
+            background-color: #ea130e;
+        }
+        
+        .section-head.center .wt-small-separator div.sep-leaf-left:before {
+            right: -20px;
+            width: 10px;
+        }
+        
+        .section-head.center .wt-small-separator div.sep-leaf-left:before,
+        .section-head.center .wt-small-separator div.sep-leaf-left:after {
+            position: absolute;
+            content: '';
+            height: 22px;
+            bottom: 0px;
+            top: 0px;
+            transform: skew(-20deg);
+        }
+        
+        .section-head.center .wt-small-separator div.sep-leaf-left:after {
+            right: -27px;
+            width: 4px;
+        }
+        
+        .section-head.center.wt-small-separator-outer h2 {
+            max-width: 630px;
+            margin: 0px auto;
+        }
+        
+        h2 {
+            font-size: 60px;
+            font-weight: 700;
+        }
+        
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: "Poppins", sans-serif;
+            line-height: 1.2;
+            color: #000;
+        }
+        
+        .service-icon-box-two {
+            position: relative;
+            padding: 40px 40px 40px 40px;
+            border: 1px solid #e7e7e7;
+        }
+        
+        .service-icon-box-two .wt-icon-box-wraper {
+            margin-bottom: 30px;
+        }
+        
+        .wt-icon-box-wraper {
+            position: relative;
+        }
+        
+        .icon-xl.inline-icon {
+            width: auto;
+        }
+        
+        .icon-xl.inline-icon {
+            text-align: left !important;
+        }
+        
+        .icon-xld,
+        .icon-xl,
+        .icon-lg,
+        .icon-md,
+        .icon-sm,
+        .icon-xs {
+            display: inline-block;
+        }
+        
+        .site-text-primary,
+        .wt-small-separator {
+            color: #ea130e;
+        }
+        
+        .icon-xl i {
+            font-size: 80px;
+            line-height: 80px;
+        }
+        
+        .icon-xld i,
+        .icon-xl i,
+        .icon-lg i,
+        .icon-md i,
+        .icon-sm i,
+        .icon-xs i {
+            vertical-align: middle;
+        }
+        
+        .wt-icon-box-wraper:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+        
+        .service-icon-box-two .service-icon-box-title .wt-title {
+            margin-bottom: 30px;
+            padding-right: 60px;
+        }
+        
+        h4 {
+            font-size: 20px;
+            font-weight: 700;
+        }
+        
+        a {
+            color: #1e1e1e;
+            outline: 0px none;
+            text-decoration: none;
+            background-color: transparent;
+        }
+        
+        .cons-contact-form .form-control {
+            border-width: 0px 0px 1px 0px;
+            border-style: solid;
+            border-color: #000;
+            height: 52px;
+            padding: 10px 0px;
+            background-color: transparent;
+        }
+        
+        .form-control {
+            font-size: 13px;
+            line-height: 20px;
+            border-radius: 0px;
+            border: none;
+        }
+        
+        .cons-contact-form .form-control {
+            border-width: 0px 0px 1px 0px;
+            border-style: solid;
+            border-color: #000;
+            padding: 10px 0px;
+            background-color: transparent;
+        }
+        
+        .cons-contact-form textarea.form-control {
+            padding-top: 15px;
+            height: 100px;
+            margin-bottom: 40px;
+        }
+        
+        .site-button.sb-bdr-dark {
+            border-right: 6px solid #000;
+        }
+        
+        .site-button {
+            background-color: #ea130e;
+        }
+        
+        .site-button {
+            outline: none;
+            color: #fff;
+            padding: 15px 40px;
+            letter-spacing: 1px;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            display: inline-table;
+            background-color: #ea130e;
+            border: none;
+            font-size: 15px;
+            font-weight: 700;
+            transition: 0.5s all ease;
+        }
+        
+        .site-button:hover {
+            background-color: #e7e7e7;
+            color: #000;
+        }
+        
+        .cons-contact-form .form-control {
+            border-width: 0px 0px 1px 0px;
+            border-style: solid;
+            border-color: #000;
+            height: 52px;
+            padding: 10px 0px;
+            background-color: transparent;
+            font-size: 14px;
+            line-height: 20px;
+            border-radius: 0px;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .cons-contact-form .form-control:focus {
+            border-color: #ea130e;
+            box-shadow: 0 0 5px rgba(234, 19, 14, 0.5);
+        }
+        
+        .cons-contact-form textarea.form-control {
+            padding-top: 15px;
+            height: 120px;
+            margin-bottom: 30px;
+        }
+        
+        .service-button {
+            background-color: #ea130e;
+            outline: none;
+            color: #fff;
+            padding: 15px 40px;
+            letter-spacing: 1px;
+            font-size: 15px;
+            font-weight: 700;
+            border: none;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        
+        .service-button:hover {
+            background-color: #e7e7e7;
+            color: #000;
+        }
+        
+        .form-group {
+            position: relative;
+            margin-bottom: 30px;
+        }
+        
+        .form-group i {
+            position: absolute;
+            top: 50%;
+            left: 15px;
+            transform: translateY(-50%);
+            color: #aaa;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            padding-left: 40px;
+            /* Adjust space for the icon */
+        }
+        
+        .section-head.left {
+            margin-bottom: 40px;
+            text-align: left;
+        }
+        
+        .section-head.left h3 {
+            font-size: 36px;
+            font-weight: 700;
+            color: #000;
+            margin-bottom: 20px;
+        }
+        
+        .section-head.left p {
+            font-size: 16px;
+            color: #666;
+            line-height: 1.5;
+        }
+        
+        .cons-contact-form .form-control::placeholder {
+            color: #999;
+            opacity: 1;
+        }
+        
+        .service-button.sb-bdr-dark {
+            border-right: 6px solid #000;
+        }
+    </style>
+
+    <div class="section-full p-t120 p-b90" style="background-image:url(https://thewebmax.org/indusza/images/background/map-bg-dark2.png);">
+        <div class="container">
+            <div class="section-head center wt-small-separator-outer">
+                <div class="wt-small-separator site-text-primary">
+                    <div class="sep-leaf-left"></div>
+                    <div>Our Services</div>
+                </div>
+                <h2 class="wt-title">Empowering Students for a Bright Future</h2>
+            </div>
+
+            <div class="s-section">
+                <div class="row">
+                    <!-- COLUMNS 1 -->
+                    <div class="col-lg-4 col-md-6 m-b30">
+                        <div class="service-icon-box-two">
+                            <div class="wt-icon-box-wraper">
+                                <div class="icon-xl inline-icon">
+                                    <span class="icon-cell site-text-primary">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor" width="80" height="80">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z" />
+                                        </svg>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="service-icon-box-title">
+                                <h4 class="wt-title"><a href="#">Student Profile Management</a></h4>
+                            </div>
+
+                            <div class="service-icon-box-content">
+                                <p>Students can create and manage their profiles, upload resumes, and update academic details for seamless placement opportunities.</p>
+                                <a href="#" class="site-button-link site-text-primary">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- COLUMNS 2 -->
+                    <div class="col-lg-4 col-md-6 m-b30">
+                        <div class="service-icon-box-two">
+                            <div class="wt-icon-box-wraper">
+                                <div class="icon-xl inline-icon">
+                                    <span class="icon-cell site-text-primary">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor" width="80" height="80">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M2.25 18.75a60.07 60.07 0 0 1 15.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 0 1 3 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 0 0-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 0 1-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 0 0 3 15h-.75M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm3 0h.008v.008H18V10.5Zm-12 0h.008v.008H6V10.5Z" />
+                                        </svg>
+
+                                    </span>
+                                </div>
+                            </div>
+
+                            <!--  -->
+
+
+                            <div class="service-icon-box-title">
+                                <h4 class="wt-title"><a href="#">Job & Internship Listings</a></h4>
+                            </div>
+
+                            <div class="service-icon-box-content">
+                                <p>Students can explore job and internship opportunities, apply online, and receive updates on their application status.</p>
+                                <a href="#" class="site-button-link site-text-primary">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- COLUMNS 3 -->
+                    <div class="col-lg-4 col-md-6 m-b30">
+                        <div class="service-icon-box-two">
+                            <div class="wt-icon-box-wraper">
+                                <div class="icon-xl inline-icon">
+                                    <span class="icon-cell site-text-primary">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor" width="80" height="80">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M11.42 15.17 17.25 21A2.652 2.652 0 0 0 21 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 1 1-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 0 0 4.486-6.336l-3.276 3.277a3.004 3.004 0 0 1-2.25-2.25l3.276-3.276a4.5 4.5 0 0 0-6.336 4.486c.091 1.076-.071 2.264-.904 2.95l-.102.085m-1.745 1.437L5.909 7.5H4.5L2.25 3.75l1.5-1.5L7.5 4.5v1.409l4.26 4.26m-1.745 1.437 1.745-1.437m6.615 8.206L15.75 15.75M4.867 19.125h.008v.008h-.008v-.008Z" />
+                                        </svg>
+
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="service-icon-box-title">
+                                <h4 class="wt-title"><a href="#">Placement Training & Workshops</a></h4>
+                            </div>
+
+                            <div class="service-icon-box-content">
+                                <p>We offer resume-building sessions, mock interviews, and coding challenges to help students excel in placement drives.</p>
+                                <a href="#" class="site-button-link site-text-primary">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-qpL6UwvQ7LheJtQWb9E5vlgPONDErk78lgCQCl4kHJAt5TfMwFVSPzvJHTRPpN7wP" crossorigin="anonymous"></script>
+
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center animate__animated animate__fadeIn">What Our Students Say</h2>
+            <div class="row">
+                <div class="col-md-6 animate__animated animate__fadeIn animate__delay-1s">
+                    <div class="testimonial p-4 bg-white shadow-sm">
+                        <p>"The placement portal helped me land my dream job. The career counseling and resume building sessions were very helpful."</p>
+                        <strong>- Student A</strong>
+                    </div>
+                </div>
+                <div class="col-md-6 animate__animated animate__fadeIn animate__delay-2s">
+                    <div class="testimonial p-4 bg-white shadow-sm">
+                        <p>"The placement process was smooth, and I received interview opportunities with top companies."
+                        </p>
+                        <strong>- Student B</strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partners Section -->
+    <section id="partners" class="py-5 text-center">
+        <div class="container">
+            <h2 class="animate_animated animate_fadeIn">Our Partners</h2>
+            <div class="row">
+                <div class="col-md-3 animate_animated animatefadeIn animate_delay-1s">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjYTLRluQ369jRaRaYBdh65haTY6eG_Agozg&s" alt="LinkedIn" class="img-fluid partner-logo mb-2">
+                    <p class="partner-name">LinkedIn</p>
+                </div>
+                <div class="col-md-3 animate_animated animatefadeIn animate_delay-2s">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFrJa88YaptRQef35Axk8zU6ri9rA-rN6LDg&s" alt="Internshala" class="img-fluid partner-logo mb-2">
+                    <p class="partner-name">Internshala</p>
+                </div>
+                <div class="col-md-3 animate_animated animatefadeIn animate_delay-3s">
+                    <img src="https://d8it4huxumps7.cloudfront.net/uploads/images/unstop/branding-guidelines/icon/unstop-icon-800x800.png" alt="Unstop" class="img-fluid partner-logo mb-2">
+                    <p class="partner-name">Unstop</p>
+                </div>
+                <div class="col-md-3 animate_animated animatefadeIn animate_delay-4s">
+                    <img src="https://pbs.twimg.com/profile_images/1772331192085274624/PlbkwMwX_400x400.png" alt="Naukri" class="img-fluid partner-logo mb-2">
+                    <p class="partner-name">Naukri</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <style>
+        .partner-logo {
+            max-width: 120px;
+            /* Adjust logo size */
+            height: auto;
+        }
+        
+        .partner-name {
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+    </style>
+
+    <!-- College Info Section -->
+    <section id="college-info" class="info-section text-center py-5 bg-light">
+        <div class="container">
+            <h2 class="animate__animated animate__fadeIn">Our College</h2>
+            <p class="animate__animated animate__fadeIn animate__delay-1s">Our college has a rich history of excellence in both academics and placements. We are committed to connecting students with top companies.</p>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+
+
+    <footer class="new_footer_area bg_color">
+        <div class="new_footer_top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6">
+                        <div class="f_widget company_widget wow fadeInLeft" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInLeft;">
+                            <h3 class="f-title f_600 t_color f_size_18">Get in Touch</h3>
+                            <p>Stay updated with the latest placement opportunities and college announcements!</p>
+                            <form action="#" class="f_subscribe_two mailchimp" method="post" novalidate="true" _lpchecked="1">
+                                <input type="text" name="EMAIL" class="form-control memail" placeholder="Email">
+                                <button class="btn btn_get btn_get_two" type="submit">Subscribe</button>
+                                <p class="mchimp-errmessage" style="display: none;"></p>
+                                <p class="mchimp-sucmessage" style="display: none;"></p>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6">
+                        <div class="f_widget about-widget pl_70 wow fadeInLeft" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInLeft;">
+                            <h3 class="f-title f_600 t_color f_size_18">Quick Links</h3>
+                            <ul class="list-unstyled f_list">
+                                <li><a href="#">Home</a></li>
+                                <li><a href="#">Student Registration</a></li>
+                                <li><a href="#">TPO Dashboard</a></li>
+                                <li><a href="#">Placement Process</a></li>
+                                <li><a href="#">Training Modules</a></li>
+                                <li><a href="#">Events & Workshops</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6">
+                        <div class="f_widget help-widget pl_70 wow fadeInLeft" data-wow-delay="0.6s" style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInLeft;">
+                            <h3 class="f-title f_600 t_color f_size_18">Help & Support</h3>
+                            <ul class="list-unstyled f_list">
+                                <li><a href="#">FAQ</a></li>
+                                <li><a href="#">Placement Guidelines</a></li>
+                                <li><a href="#">Student Portal</a></li>
+                                <li><a href="#">Contact TPO</a></li>
+                                <li><a href="#">Technical Support</a></li>
+                                <li><a href="#">Privacy Policy</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6">
+                        <div class="f_widget social-widget pl_70 wow fadeInLeft" data-wow-delay="0.8s" style="visibility: visible; animation-delay: 0.8s; animation-name: fadeInLeft;">
+                            <h3 class="f-title f_600 t_color f_size_18">Follow Us</h3>
+                            <div class="f_social_icon">
+                                <a href="#" class="fab fa-facebook" title="Facebook"></a>
+                                <a href="#" class="fab fa-twitter" title="Twitter"></a>
+                                <a href="#" class="fab fa-linkedin" title="LinkedIn"></a>
+                                <a href="#" class="fab fa-instagram" title="Instagram"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer_bg">
+                <div class="footer_bg_one"></div>
+                <div class="footer_bg_two"></div>
+            </div>
+        </div>
+        <div class="footer_bottom">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 col-sm-7">
+                        <p class="mb-0 f_400">© 2024 College Training & Placement Portal. All rights reserved.</p>
+                    </div>
+                    <div class="col-lg-6 col-sm-5 text-right">
+                        <p>Made with <i class="icon_heart"></i> by <a href="http://yourcollege.com" target="_blank">Your
+                                College</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
